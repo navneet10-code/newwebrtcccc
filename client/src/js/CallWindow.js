@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js';
-import  handleDisconnect  from 'main.js';
+import  main  from './main.js';
 
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
