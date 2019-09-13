@@ -15,6 +15,10 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
+ var pg = require('pg');
+
+
+
 class CallWindow extends Component {
   constructor(props) {
      
@@ -64,6 +68,38 @@ class CallWindow extends Component {
     
     
   }
+  
+  database() {
+  
+ 
+ console.log('inside');
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM user', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.render('pages/db', {results: result.rows} ); }
+    });
+  });
+});
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
