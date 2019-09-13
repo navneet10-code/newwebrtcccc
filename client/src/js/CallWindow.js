@@ -76,33 +76,6 @@ class CallWindow extends Component {
   
   
   
-  
-  
-  
-  database() {
-console.log('inside');
-
-
-app.get('./main.js', function(request, response) {
-    connection.query('SELECT * from user', function(err, rows, fields) {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
-        response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
-    });
-});
-
-
-  
-  }
-  
-  
- 
-  
-  
-  
-  
 startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -246,11 +219,6 @@ document.getElementById("myBtn").disabled = false;
             onClick={() => this.btnstoprecording()}
           />
 
-        <button
-            type="button"
-            className="btn-action hangup fa fa-phone"
-            onClick={() => this.database()}
-          />
         
         </div>
       </div>
