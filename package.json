@@ -50,7 +50,7 @@
   },
   "engines": {
     "node": "10.16.3",
-    "npm": "6.9.0"
+    "npm": "1.2.x"
   },
   "repository": {
     "type": "git",
