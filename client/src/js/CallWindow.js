@@ -242,7 +242,11 @@ document.getElementById("myBtn").disabled = false;
             Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
             onClick={() => this.btnstoprecording()}
           />
-        
+        <button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.database()}
+          />
         </div>
       </div>
     );
