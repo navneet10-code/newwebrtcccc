@@ -50,7 +50,7 @@
   },
   "engines": {
     "node": "10.16.3",
-    "yarn": "1.17.3"
+    "npm": "6.9.0"
   },
   "repository": {
     "type": "git",
