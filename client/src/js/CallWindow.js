@@ -3,7 +3,7 @@ import PropTypes from 'proptypes';
 import classnames from 'classnames';
 import _ from 'lodash';
 import  endcall  from './app.js';
-import index from 'index.js';
+
 
  var endTime = new Date().setTime(1362009600000);
 var currentTime = new Date().getTime();
@@ -19,7 +19,19 @@ var recorder;
 
 
 
+var express = require("express");
+var mysql = require('mysql');
+var app = express();
+app.use(express.logger());
 
+var db_config = {
+    host : 'sql12.freemysqlhosting.net',
+database : 'sql12304794',
+user : 'sql12304794',
+password : 'PLSEEGHnWv'
+};
+
+var connection;
 
 
 
