@@ -1,18 +1,18 @@
-var express = require("express");
-var mysql = require('mysql');
-var app = express();
+const  express = require("express");
+const  mysql = require('mysql');
+const  app = express();
 app.use(express.logger());
 
-var db_config = {
+const  db_config = {
     host : 'sql12.freemysqlhosting.net',
 database : 'sql12304794',
 user : 'sql12304794',
 password : 'PLSEEGHnWv'
 };
 
-var connection;
+const  connection;
 
-function handleDisconnect() {
+/*function handleDisconnect() {
     console.log('1. connecting to db:');
     connection = mysql.createConnection(db_config); // Recreate the connection, since
 													// the old one cannot be reused.
@@ -34,7 +34,7 @@ function handleDisconnect() {
     });
 }
 
-handleDisconnect();
+handleDisconnect();*/
 
 app.get('/', function(request, response) {
     connection.query('SELECT * from user', function(err, rows, fields) {
