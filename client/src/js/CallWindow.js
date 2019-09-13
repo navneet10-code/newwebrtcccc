@@ -15,7 +15,7 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
- var client ;
+ var pg ;
 
 
 
@@ -85,6 +85,7 @@ class CallWindow extends Component {
   });
 });*/
  
+const { Client } = pg;
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
