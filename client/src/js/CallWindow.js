@@ -87,7 +87,7 @@ class CallWindow extends Component {
  
 
 
-const client = new Client({
+client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: true,
 });
