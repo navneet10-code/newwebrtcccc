@@ -81,7 +81,7 @@ app.get('/db', function (request, response) {
                 <button
               type="button"
               className="btn-action fa fa-phone"
-              onClick={this.database(true)}
+              onClick={this.database()}
             />
               
           </div>
