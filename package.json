@@ -37,7 +37,9 @@
     "webpack": "4.39.2",
     "webpack-cli": "3.3.7",
     "webrtc-adapter": "6.2.1",
-    "mysql": ""
+    "cool-ascii-faces": "^1.3.4",
+    "ejs": "^2.5.6",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
     "eslint": "5.16.0",
