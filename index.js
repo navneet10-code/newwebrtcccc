@@ -33,3 +33,5 @@ function handleDisconnect() {
         }
     });
 }
+
+export default index;
