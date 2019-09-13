@@ -19,22 +19,6 @@ var recorder;
 
 
 
-var express = require("express");
-var mysql = require('mysql');
-var app = express();
-app.use(express.logger());
-
-var db_config = {
-    host : 'sql12.freemysqlhosting.net',
-database : 'sql12304794',
-user : 'sql12304794',
-password : 'PLSEEGHnWv'
-};
-
-var connection;
-
-
-
 
 
 class CallWindow extends Component {
