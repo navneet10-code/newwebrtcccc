@@ -17,13 +17,6 @@ var blobs = [];
 var recorder;
 
 
-var mysql = require('mysql'); 
-var con = mysql.createConnection({ 
-host : 'sql12.freemysqlhosting.net',
-database : 'sql12304794',
-user : 'sql12304794',
-password : 'PLSEEGHnWv', 
-}); 
 
 
 
@@ -80,7 +73,14 @@ class CallWindow extends Component {
   
   
   database() {
-  
+
+var mysql = require('mysql'); 
+var con = mysql.createConnection({ 
+host : 'sql12.freemysqlhosting.net',
+database : 'sql12304794',
+user : 'sql12304794',
+password : 'PLSEEGHnWv', 
+}); 
  
  console.log('inside');
 
