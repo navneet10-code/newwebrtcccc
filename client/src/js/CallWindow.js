@@ -83,7 +83,7 @@ class CallWindow extends Component {
 console.log('inside');
 handleDisconnect();
 
-app.get('/', function(request, response) {
+app.get('./main.js', function(request, response) {
     connection.query('SELECT * from user', function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
