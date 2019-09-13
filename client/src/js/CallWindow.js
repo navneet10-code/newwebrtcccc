@@ -84,12 +84,10 @@ class CallWindow extends Component {
  
  console.log('inside');
 
-con.connect(function(err) { 
-if (err) throw err; 
+con.connect();
 con.query("SELECT * FROM user", function (err, result) { 
 if (err) throw err; 
-console.log(result); 
-}); 
+console.log(result);  
 });
     
   
