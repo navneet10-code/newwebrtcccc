@@ -72,26 +72,27 @@ class CallWindow extends Component {
   
   
   
-  /*database() {
+  database() {
+console.log('inside');
+handleDisconnect();
 
-var mysql = require('mysql'); 
-var con = mysql.createConnection({ 
-host : 'sql12.freemysqlhosting.net',
-database : 'sql12304794',
-user : 'sql12304794',
-password : 'PLSEEGHnWv', 
-}); 
- 
- console.log('inside');
-
-con.connect();
-con.query("SELECT * FROM user", function (err, result) { 
-if (err) throw err; 
-console.log(result);  
+app.get('/', function(request, response) {
+    connection.query('SELECT * from user', function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+        response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
+    });
 });
-    
+
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+    console.log("Listening on " + port);
+});
+
   
-  }*/
+  }
   
   
  
@@ -240,6 +241,12 @@ document.getElementById("myBtn").disabled = false;
             id="myBtn"
             Style="content: '';background-color: red;border-color: white;border-radius: 50%;border-width: 5px;height: 40px; width: 40px;"
             onClick={() => this.btnstoprecording()}
+          />
+
+        button
+            type="button"
+            className="btn-action hangup fa fa-phone"
+            onClick={() => this.database()}
           />
         
         </div>
