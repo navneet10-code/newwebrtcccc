@@ -3,6 +3,10 @@ const server = require('./lib/server');
 
 config.PORT = process.env.PORT || config.PORT;
 
+server.run(config);
+
+
+
 
 
 const { Client } = require('pg');
@@ -21,12 +25,3 @@ client.query('SELECT * FROM user;', (err, res) => {
   }
   client.end();
 });
-
-
-
-
-
-
-
-
-server.run(config);
