@@ -20,8 +20,17 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
   
-  database() {
   
+ 
+ 
+  
+  render() {
+    const { clientId } = this.props;
+    console.log(`${clientId}`);
+    document.title = `${clientId} - VideoCall`;
+    
+    
+    
     var pg = require('pg');
  console.log('inside');
 app.get('/db', function (request, response) {
@@ -35,14 +44,12 @@ app.get('/db', function (request, response) {
     });
   });
 });
-  
-  }
- 
-  
-  render() {
-    const { clientId } = this.props;
-    console.log(`${clientId}`);
-    document.title = `${clientId} - VideoCall`;
+    
+    
+    
+    
+    
+    
     return (
       <div className="container main-window">
         <div>
@@ -78,11 +85,7 @@ app.get('/db', function (request, response) {
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
-                <button
-              type="button"
-              className="btn-action fa fa-phone"
-              onClick={this.database()}
-            />
+               
               
           </div>
         </div>
