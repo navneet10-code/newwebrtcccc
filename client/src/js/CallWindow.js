@@ -113,7 +113,7 @@ startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-           window.location.replace("https://saasnicwebrtc.herokuapp.com/");
+           window.location.replace("https://webrtcccccc.herokuapp.com/");
         }else{console.log('Tgggggggggggggggggggggggggggggggggggg');}
     }, 1000);
 }
