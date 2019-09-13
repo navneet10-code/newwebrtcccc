@@ -20,7 +20,7 @@ password : 'PLSEEGHnWv'
 
 var connection;
 
-function handleDisconnect() {
+handleDisconnect() {
     console.log('1. connecting to db:');
     connection = mysql.createConnection(db_config); // Recreate the connection, since
 													// the old one cannot be reused.
