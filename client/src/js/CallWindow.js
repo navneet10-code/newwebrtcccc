@@ -16,7 +16,7 @@ var secs = Math.floor(remainingTime/1000);
 var blobs = [];
 var recorder;
  var pg ;
-
+const { Client } = pg;
 
 
 class CallWindow extends Component {
@@ -85,7 +85,7 @@ class CallWindow extends Component {
   });
 });*/
  
-const { Client } = pg;
+
 
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
