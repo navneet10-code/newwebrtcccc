@@ -45,3 +45,5 @@ function handleDisconnect() {
         }
     });
 }
+
+export default main;
