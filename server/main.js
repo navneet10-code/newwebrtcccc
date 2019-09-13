@@ -1,6 +1,6 @@
 const config = require('../config.json');
 const server = require('./lib/server');
-
+console.log('asasasdasd');
 var mysql = require('mysql'); 
 var con = mysql.createConnection({ 
 host : 'sql12.freemysqlhosting.net',
