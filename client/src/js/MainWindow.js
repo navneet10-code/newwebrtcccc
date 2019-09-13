@@ -20,6 +20,23 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
   
+  database() {
+  
+    var pg = require('pg');
+ console.log('inside');
+app.get('/db', function (request, response) {
+  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+    client.query('SELECT * FROM user', function(err, result) {
+      done();
+      if (err)
+       { console.error(err); response.send("Error " + err); }
+      else
+       { response.render('pages/db', {results: result.rows} ); }
+    });
+  });
+});
+  
+  }
  
   
   render() {
@@ -60,6 +77,11 @@ class MainWindow extends Component {
               type="button"
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
+            />
+                <button
+              type="button"
+              className="btn-action fa fa-phone"
+              onClick={this.database(true)}
             />
               
           </div>
