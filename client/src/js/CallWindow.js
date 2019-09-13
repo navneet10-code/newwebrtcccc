@@ -15,7 +15,7 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
- var pg = require('pg');
+ var pg ;
 
 
 
