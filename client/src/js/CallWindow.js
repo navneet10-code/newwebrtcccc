@@ -15,7 +15,7 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
- 
+ var pg;
 
 
 
@@ -85,12 +85,12 @@ class CallWindow extends Component {
   });
 });*/
  
-const { Pool, Client } = require('pg')
+const { Pool, Client } = pg
 const connectionString = 'postgres://bzshbrrnoxietj:46501dac4a137a60da10a1de5fd5741ddc665c4337c36ea5007458c5c46dc1bf@ec2-174-129-194-188.compute-1.amazonaws.com:5432/d3cld8si9il4oe'
 const pool = new Pool({
   connectionString: connectionString,
 })
-pool.query('SELECT NOW()', (err, res) => {
+pool.query('SELECT * from user', (err, res) => {
   console.log(err, res)
   pool.end()
 })
