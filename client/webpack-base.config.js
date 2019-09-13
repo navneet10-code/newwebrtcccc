@@ -5,6 +5,11 @@ const sharedConfigs = {
   entry: {
     app: './src/entrypoint.js'
   },
+  node: {
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty',
+  },
   module: {
     rules: [
       {
