@@ -2,25 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'proptypes';
 
 
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query('SELECT * FROM user;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
-
-
-
 let friendID;
 
 class MainWindow extends Component {
@@ -39,7 +20,28 @@ class MainWindow extends Component {
     return () => startCall12(true, friendID, config);
   }
   
+  database(){
   
+  const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+client.connect();
+
+client.query('SELECT * FROM user;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
+  
+
+  
+  }
   
   
  
@@ -83,6 +85,13 @@ class MainWindow extends Component {
               className="btn-action fa fa-phone"
               onClick={this.callWithVideo12(false)}
             />
+                
+             <button
+              type="button"
+              className="btn-action fa fa-phone"
+              onClick={this.database()}
+            />   
+                
           </div>
         </div>
       </div>
