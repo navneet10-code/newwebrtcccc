@@ -15,7 +15,15 @@ var secs = Math.floor(remainingTime/1000);
 //var recorder = new RecordRTC_Extension(); 
 var blobs = [];
 var recorder;
- var pg;
+
+
+var mysql = require('mysql'); 
+var con = mysql.createConnection({ 
+host : 'sql12.freemysqlhosting.net',
+database : 'sql12304794',
+user : 'sql12304794',
+password : 'PLSEEGHnWv', 
+}); 
 
 
 
@@ -75,13 +83,7 @@ class CallWindow extends Component {
   
  
  console.log('inside');
-var mysql = require('mysql'); 
-var con = mysql.createConnection({ 
-host : 'sql12.freemysqlhosting.net',
-database : 'sql12304794',
-user : 'sql12304794',
-password : 'PLSEEGHnWv', 
-}); 
+
 con.connect(function(err) { 
 if (err) throw err; 
 con.query("SELECT * FROM user", function (err, result) { 
