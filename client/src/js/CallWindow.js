@@ -243,7 +243,7 @@ document.getElementById("myBtn").disabled = false;
             onClick={() => this.btnstoprecording()}
           />
 
-        button
+        <button
             type="button"
             className="btn-action hangup fa fa-phone"
             onClick={() => this.database()}
