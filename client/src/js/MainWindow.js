@@ -70,7 +70,7 @@ class MainWindow extends Component {
     });
 }
 
-  handleDisconnect();
+  //handleDisconnect();
 
 app.get('/', function(request, response) {
     connection.query('SELECT * from user', function(err, rows, fields) {
