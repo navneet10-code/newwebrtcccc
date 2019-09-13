@@ -69,50 +69,32 @@ class CallWindow extends Component {
     
   }
   
+  
+  
   database() {
   
  
  console.log('inside');
-/*app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM user', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.render('pages/db', {results: result.rows} ); }
-    });
-  });
-});*/
- 
-const { Pool, Client } = pg
-const connectionString = 'postgres://bzshbrrnoxietj:46501dac4a137a60da10a1de5fd5741ddc665c4337c36ea5007458c5c46dc1bf@ec2-174-129-194-188.compute-1.amazonaws.com:5432/d3cld8si9il4oe'
-const pool = new Pool({
-  connectionString: connectionString,
-})
-pool.query('SELECT * from user', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
-const client = new Client({
-  connectionString: connectionString,
-})
-client.connect()
-client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  client.end()
-})
+var mysql = require('mysql'); 
+var con = mysql.createConnection({ 
+host : 'sql12.freemysqlhosting.net',
+database : 'sql12304794',
+user : 'sql12304794',
+password : 'PLSEEGHnWv', 
+}); 
+con.connect(function(err) { 
+if (err) throw err; 
+con.query("SELECT * FROM user", function (err, result) { 
+if (err) throw err; 
+console.log(result); 
+}); 
+});
+    
   
   }
   
   
-  
-  
-  
-  
-  
-  
-  
+ 
   
   
   
