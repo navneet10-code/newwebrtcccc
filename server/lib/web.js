@@ -1,18 +1,18 @@
-const  express = require("express");
-const  mysql = require('mysql');
-const  app = express();
+var express = require("express");
+var mysql = require('mysql');
+var app = express();
 app.use(express.logger());
 
-const  db_config = {
+var db_config = {
     host : 'sql12.freemysqlhosting.net',
 database : 'sql12304794',
 user : 'sql12304794',
 password : 'PLSEEGHnWv'
 };
 
-const  connection;
+var connection;
 
-/*function handleDisconnect() {
+function handleDisconnect() {
     console.log('1. connecting to db:');
     connection = mysql.createConnection(db_config); // Recreate the connection, since
 													// the old one cannot be reused.
@@ -34,7 +34,7 @@ const  connection;
     });
 }
 
-handleDisconnect();*/
+handleDisconnect();
 
 app.get('/', function(request, response) {
     connection.query('SELECT * from user', function(err, rows, fields) {
@@ -42,11 +42,15 @@ app.get('/', function(request, response) {
             console.log('error: ', err);
             throw err;
         }
-        response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
+	console.log('rows',rows);
+        //response.send(['Hello World!!!! HOLA MUNDO!!!!', rows]);
+	response.send(['hello how are you?']);
+	console.warn('code finished for req send');    
     });
 });
 
-/*var port = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
 app.listen(port, function() {
 console.log("Listening on " + port);
-});*/
+});
+
